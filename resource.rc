@@ -1,0 +1,38 @@
+#include <windows.h>
+#include "kontrolki.h"
+
+MAIN_DIALOG DIALOG 0, 0, 200, 225
+STYLE WS_CAPTION | WS_SYSMENU | DS_CENTER | WS_MINIMIZEBOX
+MENU 9007
+CAPTION "ForFlower :)"
+FONT 8, "MS Sans Serif"
+{
+    LTEXT "Tekst pierwotny:", ID_STATIC1, 3, 0, 194, 10
+    EDITTEXT ID_SOURCE, 3, 10, 194, 70, WS_TABSTOP | ES_MULTILINE | ES_AUTOHSCROLL | ES_WANTRETURN | WS_HSCROLL | WS_VSCROLL
+    
+    LTEXT "Teskt wynikowy:", ID_STATIC2, 3, 85, 194, 10
+    EDITTEXT ID_OUTPUT, 3, 95, 194, 70, WS_TABSTOP | ES_MULTILINE | ES_AUTOHSCROLL | ES_WANTRETURN | WS_HSCROLL | WS_VSCROLL 
+    
+    LTEXT "Popraw pliki w katalogu:", ID_STATIC3, 3, 170, 194, 10
+    EDITTEXT ID_KATALOG, 3, 180, 142, 12, ES_AUTOHSCROLL | WS_TABSTOP
+    PUSHBUTTON "Przegl¹daj", IDC_WYBIERZ, 147, 180, 50, 12, WS_TABSTOP
+    
+    AUTOCHECKBOX "Samodzielny wybór plików", ID_WYBOR, 3, 195, 194, 12, WS_TABSTOP
+    
+    DEFPUSHBUTTON "START", IDC_START, 3, 210, 96, 12, WS_TABSTOP
+    PUSHBUTTON "STOP", IDC_STOP, 101, 210, 96, 12, WS_TABSTOP
+}
+9007 MENU
+{
+    POPUP "&Program"
+    {
+        MENUITEM "&Nowe okno\tCtrl + N", IDC_NOWEOKNO
+        MENUITEM SEPARATOR
+        MENUITEM "&Zakoñcz\tAlt + F4", IDC_ZAKONCZ
+    }
+    POPUP "P&omoc"
+    {
+        MENUITEM "&Pierwsza pomoc\tF1", IDC_POMOC
+        MENUITEM "&O programie", IDC_OPROGRAMIE
+    }
+}
